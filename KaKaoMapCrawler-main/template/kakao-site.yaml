@@ -1,0 +1,42 @@
+## 카카오맵 사이트의 css selector & xpath & class name 등 셀레니움에 전달할 요소를 지정합니다
+search:
+  list: ul#info\.search\.place\.list li
+  url_id: a[class=moreview] ::attr(href)
+  address: .addr > p ::attr(title)
+
+template:
+  name: //div[@id='mArticle']/div[@class='cont_essential']/div[1]//h2[@class='tit_location']
+  address: .txt_address
+  cuisine: //*[@id="mArticle"]/div[1]/div[1]/div[2]/div/div/span[1]
+  open_close: list_operation .txt_operation
+  phone: .txt_contact
+  website: .link_homepage
+  location_detail: ico_comm ico_delivery # 예약가능, 포장가능 여부 등
+  facilities: list_facility # 주차가능? 등의 시설 여부
+  rating: .ahead_info .num_rate
+  tags: location_detail .link_tag
+  introduce: txt_introduce
+  review_tabs:
+  menus: .list_menu li
+  reviews: .list_evaluation li
+  blog_reviews: .list_review li
+
+menu:
+  title: .//div[@class='info_menu']/span[@class='loss_word']//text()
+  price: .//div[@class='info_menu']/em[@class='price_menu']/text()
+  load_more_btn: .cont_menu > .link_more
+  load_more_stop_btn: .link_close.link_more
+
+review:
+  rating: .//em[@class='num_rate']/text()
+  review: .//div[@class='comment_info']/p//text()
+  reviewer: .//div[@class='append_item']/a[@class='link_user']//text()
+  review_date: .//div[@class='append_item']/span[@class='time_write']//text()
+  total_review: .cont_evaluation .color_b
+  load_more_btn: //div[@id='mArticle']/div[@class='cont_evaluation']//div[@class='paging_mapdetail']/a[%s]
+  next_btn: .btn_next
+
+blog_review:
+  link: .//a/@href
+  load_more_btn: //div[@id='mArticle']/div[@class='cont_review']/div[@class='wrap_list']/a[@class='link_more']
+  load_more_stop_btn: //div[@id='mArticle']/div[@class='cont_review']/div[@class='wrap_list']/a[contains(@class, 'link_more') and contains(@class, 'link_close')]

@@ -1,0 +1,7 @@
+pip install Scrapy
+pip install fake-useragent
+pip install selenium
+pip install pandas
+pip install PyYAML
+pip install simplejson
+pip install beautifulsoup4
